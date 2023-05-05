@@ -321,7 +321,7 @@ app.post("/user/tweets/", authenticationFunction, async (request, response) => {
   const createTweetQuery = `
   INSERT INTO tweet
   (tweet,user_id,date_time)
-  VALUES('${tweet}',${loggedInUserId},${dateTime});`;
+  VALUES('${tweet}',${loggedInUserId},'${dateTime}');`;
   const createTweet = await db.run(createTweetQuery);
   response.send("Created a Tweet");
 });
